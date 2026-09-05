@@ -28,6 +28,7 @@
         <ul>
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#como-funciona">¿Cómo funciona?</a></li>
+          <li><a href="#beneficios">Beneficios</a></li>
           <li><a href="#disponibilidad">Disponibilidad</a></li>
           <li><a href="#registro">Registrarse</a></li>
         </ul>
@@ -89,6 +90,46 @@
   </section>
 
   <!-- ==============================
+       SECCIÓN: BENEFICIOS (nueva)
+  ================================== -->
+  <section id="beneficios" class="beneficios">
+    <h2>¿Por qué elegir Smart Park?</h2>
+    <p class="subtitulo">Ventajas de nuestro sistema de estacionamiento inteligente:</p>
+
+    <!-- Lista desordenada: beneficios del sistema -->
+    <ul class="lista-beneficios">
+      <li>
+        <span class="icono-beneficio">⚡</span>
+        <div>
+          <h3>Acceso instantáneo</h3>
+          <p>Lectura automática de patente al ingresar. Sin barreras manuales ni tickets.</p>
+        </div>
+      </li>
+      <li>
+        <span class="icono-beneficio">📱</span>
+        <div>
+          <h3>Gestión desde el celular</h3>
+          <p>Reserva y paga tu espacio desde cualquier dispositivo, donde estés.</p>
+        </div>
+      </li>
+      <li>
+        <span class="icono-beneficio">🔒</span>
+        <div>
+          <h3>Seguridad garantizada</h3>
+          <p>Cámaras 24/7 y registro digital de cada ingreso y salida del estacionamiento.</p>
+        </div>
+      </li>
+      <li>
+        <span class="icono-beneficio">♿</span>
+        <div>
+          <h3>Espacios accesibles</h3>
+          <p>Espacios reservados para personas con movilidad reducida, señalizados y monitoreados.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ==============================
        SECCIÓN: DISPONIBILIDAD
   ================================== -->
   <section id="disponibilidad" class="disponibilidad">
@@ -144,6 +185,19 @@
           name="email"
           placeholder="tucorreo@email.com"
           autocomplete="email"
+          required
+        />
+      </div>
+
+      <!-- Campo: Teléfono de contacto (nuevo) -->
+      <div class="campo">
+        <label for="telefono">Teléfono de contacto</label>
+        <input
+          type="tel"
+          id="telefono"
+          name="telefono"
+          placeholder="Ej: +56 9 1234 5678"
+          autocomplete="tel"
           required
         />
       </div>
