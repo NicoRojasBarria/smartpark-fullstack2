@@ -1,0 +1,416 @@
+/* =============================================
+   SMART PARK – Hoja de Estilos Principal
+   Autor: [Tu nombre / nombres del grupo]
+   Fecha: 2025
+   Descripción: Estilos para el sistema de
+   estacionamiento inteligente Smart Park.
+   CSS separado del HTML (buena práctica).
+============================================= */
+
+
+/* ==============================
+   1. RESET Y VARIABLES GLOBALES
+================================= */
+
+/* Eliminamos márgenes y paddings por defecto del navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables CSS: colores y tipografía del proyecto */
+:root {
+  --color-primario:   #0d47a1;   /* Azul oscuro – confianza y tecnología */
+  --color-acento:     #1565c0;   /* Azul medio – hover y destacados */
+  --color-fondo:      #f5f7fa;   /* Gris muy claro – fondo general */
+  --color-texto:      #1a1a2e;   /* Casi negro – texto principal */
+  --color-subtexto:   #555577;   /* Gris azulado – texto secundario */
+  --color-libre:      #e8f5e9;   /* Verde claro – espacio disponible */
+  --color-ocupado:    #ffebee;   /* Rojo claro – espacio ocupado */
+  --fuente-principal: 'Segoe UI', system-ui, sans-serif;
+  --radio-borde:      10px;
+  --sombra-card:      0 4px 16px rgba(0,0,0,0.08);
+}
+
+/* Estilo base del documento */
+body {
+  font-family: var(--fuente-principal);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+}
+
+
+/* ==============================
+   2. CABECERA Y NAVEGACIÓN
+================================= */
+
+header {
+  background-color: var(--color-primario);
+  position: sticky;   /* La barra queda fija al hacer scroll */
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+/* Contenedor interno centrado */
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+.logo-icon {
+  font-size: 1.8rem;
+}
+
+/* Menú de navegación */
+nav ul {
+  list-style: none;   /* Quitamos los puntos de la lista */
+  display: flex;
+  gap: 32px;
+}
+
+nav ul li a {
+  color: #cce4ff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+/* Cambio de color al pasar el mouse */
+nav ul li a:hover {
+  color: #ffffff;
+}
+
+
+/* ==============================
+   3. SECCIÓN HERO
+================================= */
+
+.hero {
+  position: relative;
+  height: 480px;
+  overflow: hidden;
+}
+
+/* Imagen de fondo del hero */
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  /* Oscurecemos la imagen con un filtro para que el texto sea legible */
+  filter: brightness(0.45);
+}
+
+/* Texto encima de la imagen */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ffffff;
+  width: 90%;
+  max-width: 680px;
+}
+
+.hero-content h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 28px;
+  opacity: 0.9;
+}
+
+
+/* ==============================
+   4. BOTONES REUTILIZABLES
+================================= */
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--color-primario);
+  color: #ffffff;
+  padding: 13px 32px;
+  border: none;
+  border-radius: var(--radio-borde);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-acento);
+  transform: translateY(-2px);
+}
+
+/* Variante ancho completo (para el formulario) */
+.btn-block {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 8px;
+}
+
+
+/* ==============================
+   5. SECCIÓN: ¿CÓMO FUNCIONA?
+================================= */
+
+.como-funciona {
+  max-width: 1100px;
+  margin: 64px auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+/* Subtítulos reutilizables en todas las secciones */
+.subtitulo {
+  color: var(--color-subtexto);
+  margin: 10px 0 40px;
+  font-size: 1rem;
+}
+
+/* Lista ordenada con estilo de tarjetas */
+.pasos {
+  list-style: none;   /* Quitamos los números por defecto */
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  flex-wrap: wrap;    /* Se adapta en pantallas pequeñas */
+  counter-reset: pasos-counter;   /* Contador CSS personalizado */
+}
+
+/* Cada paso / tarjeta */
+.pasos li {
+  background: #ffffff;
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra-card);
+  padding: 24px 20px;
+  width: 280px;
+  position: relative;
+  counter-increment: pasos-counter;   /* Incrementa el contador */
+}
+
+/* Número de paso generado con CSS */
+.pasos li::before {
+  content: counter(pasos-counter);
+  background-color: var(--color-primario);
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0 auto 16px;
+}
+
+/* Imágenes dentro de las tarjetas de pasos */
+.pasos li img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 14px;
+}
+
+.pasos li h3 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+  color: var(--color-texto);
+}
+
+.pasos li p {
+  font-size: 0.9rem;
+  color: var(--color-subtexto);
+}
+
+
+/* ==============================
+   6. SECCIÓN: DISPONIBILIDAD
+================================= */
+
+.disponibilidad {
+  background-color: #ffffff;
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.disponibilidad h2 {
+  font-size: 1.9rem;
+  margin-bottom: 8px;
+}
+
+/* Lista de niveles sin viñetas */
+.niveles {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Tarjeta de cada nivel */
+.niveles li {
+  padding: 20px 36px;
+  border-radius: var(--radio-borde);
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: var(--sombra-card);
+}
+
+/* Estado: espacio libre (verde) */
+.niveles li.libre {
+  background-color: var(--color-libre);
+  color: #2e7d32;
+  border-left: 4px solid #43a047;
+}
+
+/* Estado: espacio ocupado (rojo) */
+.niveles li.ocupado {
+  background-color: var(--color-ocupado);
+  color: #c62828;
+  border-left: 4px solid #e53935;
+}
+
+
+/* ==============================
+   7. SECCIÓN: FORMULARIO REGISTRO
+================================= */
+
+.registro {
+  max-width: 520px;
+  margin: 64px auto;
+  padding: 40px 32px;
+  background: #ffffff;
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra-card);
+}
+
+.registro h2 {
+  font-size: 1.7rem;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.registro .subtitulo {
+  text-align: center;
+}
+
+/* Cada campo del formulario */
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+/* Etiqueta del campo */
+.campo label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-texto);
+  margin-bottom: 6px;
+}
+
+/* Caja de texto de entrada */
+.campo input {
+  padding: 11px 14px;
+  border: 1.5px solid #c5cae9;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--color-texto);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+/* Efecto al hacer clic en el input */
+.campo input:focus {
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 3px rgba(13,71,161,0.12);
+}
+
+
+/* ==============================
+   8. PIE DE PÁGINA
+================================= */
+
+footer {
+  background-color: var(--color-primario);
+  color: #cce4ff;
+  text-align: center;
+  padding: 36px 24px;
+  font-size: 0.9rem;
+}
+
+/* Sección de referencias en el footer */
+footer .referencias {
+  margin-top: 20px;
+}
+
+footer .referencias p {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+footer .referencias ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+footer .referencias ul li a {
+  color: #90caf9;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s;
+}
+
+footer .referencias ul li a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+
+/* ==============================
+   9. TÍTULOS GENERALES
+================================= */
+
+/* Estilos compartidos para los h2 de cada sección */
+h2 {
+  font-size: 1.9rem;
+  color: var(--color-texto);
+  margin-bottom: 8px;
+}
