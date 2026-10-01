@@ -1,0 +1,80 @@
+/* Estilos generales */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Encabezado */
+
+header {
+    text-align: center;
+    background-color: lightblue;
+    padding: 20px;
+}
+
+/* Navegación */
+
+nav {
+    background-color: blue;
+}
+nav a {
+    color: white;
+}
+
+/* Leyenda */
+
+.leyenda {
+   transition: 2s;
+}
+.leyenda:hover {
+    transform: translate(20px);
+}
+
+/* Imagen */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Contenido principal */
+
+main {
+    padding: 20px;
+}
+
+/* Títulos y textos */
+
+h2 {
+    color: blue;
+    font-size: 24px;
+}
+main p {
+    line-height: 1.5;  
+}
+main li {
+    line-height: 1.8;
+}
+
+/* Secciones */
+
+section {
+    margin-bottom: 40px;
+}
+
+/* Pie de página */
+
+footer {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Diseño adaptable para teléfonos */
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+}
