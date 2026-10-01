@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - SmartPark</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>SmartPark</h1>
+        <p>Encuentra tu estacionamiento de forma rápida y segura</p>
+
+        <nav>
+            <p>
+                <a href="index.html">Inicio</a> |
+                <a href="productos.html">Productos</a> |
+                <a href="nosotros.html">Nosotros</a> |
+                <a href="blog.html">Blog</a> |
+                <a href="contacto.html">Contacto</a> |
+                <a href="carrito.html">Carrito</a> |
+                <a href="registro.html">Registro</a> |
+                <a href="login.html">Login</a>
+            </p>
+        </nav>
+
+        <p class="leyenda">Encuentra, reserva y gestiona tu estacionamiento con SmartPark</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>Registro de usuario</h2>
+
+            <form id="formulario-registro">
+
+                <label for="run">RUN:</label>
+                <input type="text" id="run" minlength="7" maxlength="9">
+
+                <br><br>
+
+                <label for="nombre-registro">Nombre:</label>
+                <input type="text" id="nombre-registro" maxlength="50">
+
+                <br><br>
+
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" maxlength="100">
+
+                <br><br>
+
+                <label for="email-registro">Correo electrónico:</label>
+                <input type="email" id="email-registro" maxlength="100">
+
+                <br><br>
+
+                <label for="fecha-nacimiento">Fecha de nacimiento:</label>
+                <input type="date" id="fecha-nacimiento">
+
+                <br><br>
+
+                <label for="tipo-usuario">Tipo de usuario:</label>
+                <select id="tipo-usuario">
+                    <option value="">Seleccione</option>
+                    <option value="Administrador">Administrador</option>
+                    <option value="Cliente">Cliente</option>
+                    <option value="Vendedor">Vendedor</option>
+                </select>
+
+                <br><br>
+
+                <label for="region">Región:</label>
+                <select id="region">
+                    <option value="">Seleccione una región</option>
+                </select>
+
+                <br><br>
+
+                <label for="comuna">Comuna:</label>
+                <select id="comuna">
+                    <option value="">Seleccione una comuna</option>
+                </select>
+
+                <br><br>
+
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" maxlength="300">
+
+                <br><br>
+
+                <button type="submit">Registrarse</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <script src="funciones.js"></script>
+
+</body>
+
+</html>
