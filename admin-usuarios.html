@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración de Usuarios - SmartPark</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="assets/LogoSmartPark.png"
+            alt="Logo SmartPark"
+            class="logo-smartpark">
+        <h1>SmartPark - Administración</h1>
+    </header>
+
+    <main class="admin-layout">
+
+        <nav class="menu-admin">
+            <ul>
+                <li><a href="admin.html">Inicio</a></li>
+                <li><a href="admin-productos.html">Productos</a></li>
+                <li><a href="admin-ordenes.html">Órdenes</a></li>
+                <li><a href="admin-usuarios.html">Usuarios</a></li>
+                <li><a href="index.html">Tienda</a></li>
+            </ul>
+        </nav>
+
+        <section class="contenido-admin">
+
+            <h2>Administración de Usuarios</h2>
+
+            <form id="formulario-usuario">
+
+                <label for="run-usuario">RUN:</label>
+                <input
+                    type="text"
+                    id="run-usuario"
+                    minlength="7"
+                    maxlength="9"
+                    placeholder="111111111"
+                >
+
+                <br><br>
+
+                <label for="nombre-usuario">Nombre:</label>
+                <input
+                    type="text"
+                    id="nombre-usuario"
+                    maxlength="50"
+                >
+
+                <br><br>
+
+                <label for="apellidos-usuario">Apellidos:</label>
+                <input
+                    type="text"
+                    id="apellidos-usuario"
+                    maxlength="100"
+                >
+
+                <br><br>
+
+                <label for="email-usuario">Correo electrónico:</label>
+                <input
+                    type="email"
+                    id="email-usuario"
+                    maxlength="100"
+                >
+
+                <br><br>
+
+                <label for="fecha-usuario">Fecha de nacimiento:</label>
+                <input
+                    type="date"
+                    id="fecha-usuario"
+                >
+
+                <br><br>
+
+                <label for="tipo-usuario-admin">Tipo de usuario:</label>
+                <select id="tipo-usuario-admin">
+                    <option value="">Seleccione un tipo</option>
+                    <option value="Administrador">Administrador</option>
+                    <option value="Cliente">Cliente</option>
+                    <option value="Vendedor">Vendedor</option>
+                </select>
+
+                <br><br>
+
+                <label for="region-usuario">Región:</label>
+                <select id="region-usuario">
+                    <option value="">Seleccione una región</option>
+                </select>
+
+                <br><br>
+
+                <label for="comuna-usuario">Comuna:</label>
+                <select id="comuna-usuario">
+                    <option value="">Seleccione una comuna</option>
+                </select>
+
+                <br><br>
+
+                <label for="direccion-usuario">Dirección:</label>
+                <input
+                    type="text"
+                    id="direccion-usuario"
+                    maxlength="300"
+                >
+
+                <br><br>
+
+                <button type="submit">Guardar usuario</button>
+
+            </form>
+
+            <h2>Listado de Usuarios</h2>
+
+            <div id="lista-usuarios-admin"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>SmartPark - Elvira San Martín y Nicolás Rojas - 2026</p>
+    </footer>
+
+    <script src="funciones.js"></script>
+
+    <script>
+        protegerPaginaAdmin();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Órdenes - SmartPark</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <img src="assets/LogoSmartPark.png"
+            alt="Logo SmartPark"
+            class="logo-smartpark">
+        <h1>SmartPark - Administración</h1>
+    </header>
+
+    <main class="admin-layout">
+
+        <nav class="menu-admin">
+            <ul>
+                <li class="solo-administrador">
+                    <a href="admin.html">Inicio</a>
+                </li>
+
+                <li>
+                    <a href="admin-productos.html">Productos</a>
+                </li>
+
+                <li>
+                    <a href="admin-ordenes.html">Órdenes</a>
+                </li>
+
+                <li class="solo-administrador">
+                    <a href="admin-usuarios.html">Usuarios</a>
+                </li>
+
+                <li>
+                    <a href="index.html">Tienda</a>
+                </li>
+            </ul>
+        </nav>
+
+        <section class="contenido-admin">
+
+            <h2>Listado de Órdenes</h2>
+
+            <div>
+                <p><strong>Orden:</strong> 001</p>
+                <p><strong>Cliente:</strong> Ana Pérez</p>
+                <p><strong>Total:</strong> $3000</p>
+                <a href="detalle-orden.html?id=001">Ver detalle</a>
+            </div>
+
+            <hr>
+
+            <div>
+                <p><strong>Orden:</strong> 002</p>
+                <p><strong>Cliente:</strong> Carlos Soto</p>
+                <p><strong>Total:</strong> $2000</p>
+                <a href="detalle-orden.html?id=002">Ver detalle</a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>SmartPark - Elvira San Martín y Nicolás Rojas - 2026</p>
+    </footer>
+
+    <script src="funciones.js"></script>
+
+    <script>
+        protegerPaginaProductos();
+        controlarVistaProductos();
+    </script>
+
+</body>
+
+</html>
